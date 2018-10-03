@@ -1,4 +1,5 @@
 package com.netemera.sbtnetemera
+
 import sbt._
 
 import scala.language.implicitConversions

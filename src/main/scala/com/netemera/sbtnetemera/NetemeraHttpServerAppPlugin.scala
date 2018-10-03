@@ -126,7 +126,7 @@ object NetemeraHttpServerAppPlugin extends AutoPlugin {
     packageDescription := name.value,
     topLevelDirectory := None,
 
-    dockerBaseImage := dockerRepository.value.map(_ + "/").getOrElse("") + "netemera/docker-java-jre:0.1.6",
+    dockerBaseImage := dockerRepository.value.map(_ + "/").getOrElse("") + "netemera/docker-java-jre:0.1.9",
     dockerRepository := Some("registry.gitlab.com"),
     dockerUsername := Some("netemera"),
     dockerUpdateLatest := true,
