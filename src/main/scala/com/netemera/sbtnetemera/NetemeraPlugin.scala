@@ -9,4 +9,3 @@ object NetemeraPlugin extends AutoPlugin {
     lazy val NetemeraLibraryDependencies: com.netemera.sbtnetemera.NetemeraLibraryDependencies.type = com.netemera.sbtnetemera.NetemeraLibraryDependencies
   }
 }
-
