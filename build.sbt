@@ -11,11 +11,12 @@ lazy val root = (project in file(".")).
       "-deprecation",
       "-unchecked"
     ),
-    scalaVersion := "2.12.7",
+    scalaVersion := "2.12.8",
     libraryDependencies ++= Seq(
       "org.slf4j" % "slf4j-nop" % "1.7.25"
     ),
-    addSbtPlugin("com.github.mwegrz" %% "sbt-mwegrz" % "0.1.0-SNAPSHOT"),
+    resolvers += "Sonatype Maven Snapshots" at "https://oss.sonatype.org/content/repositories/releases",
+    addSbtPlugin("com.github.mwegrz" %% "sbt-mwegrz" % "0.1.0"),
     // Release settings
     releaseTagName := { (version in ThisBuild).value },
     releaseTagComment := s"Release version ${(version in ThisBuild).value}",
