@@ -15,8 +15,7 @@ lazy val root = (project in file(".")).
     libraryDependencies ++= Seq(
       "org.slf4j" % "slf4j-nop" % "1.7.25"
     ),
-    resolvers += "Sonatype Maven Snapshots" at "https://oss.sonatype.org/content/repositories/releases",
-    addSbtPlugin("com.github.mwegrz" %% "sbt-mwegrz" % "0.1.0"),
+    addSbtPlugin("com.github.mwegrz" %% "sbt-mwegrz" % "0.1.2"),
     // Release settings
     releaseTagName := { (version in ThisBuild).value },
     releaseTagComment := s"Release version ${(version in ThisBuild).value}",
