@@ -1,8 +1,8 @@
 import ReleaseTransformations._
 
-lazy val root = (project in file(".")).
-  enablePlugins(SbtPlugin, ReleasePlugin, ScalafmtPlugin).
-  settings(
+lazy val root = (project in file("."))
+  .enablePlugins(SbtPlugin, ReleasePlugin, ScalafmtPlugin)
+  .settings(
     name := "sbt-netemera",
     organization := "com.netemera",
     scalacOptions ++= Seq(
@@ -12,10 +12,11 @@ lazy val root = (project in file(".")).
       "-unchecked"
     ),
     scalaVersion := "2.12.8",
+    scalafmtOnCompile := true,
     libraryDependencies ++= Seq(
       "org.slf4j" % "slf4j-nop" % "1.7.25"
     ),
-    addSbtPlugin("com.github.mwegrz" %% "sbt-mwegrz" % "0.1.7"),
+    addSbtPlugin("com.github.mwegrz" %% "sbt-mwegrz" % "0.1.8"),
     // Release settings
     releaseTagName := { (version in ThisBuild).value },
     releaseTagComment := s"Release version ${(version in ThisBuild).value}",
@@ -44,7 +45,9 @@ lazy val root = (project in file(".")).
     ),
     publishMavenStyle := true,
     publishArtifact in Test := false,
-    pomIncludeRepository := { _ => false },
+    pomIncludeRepository := { _ =>
+      false
+    },
     licenses := Seq("Apache License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.html")),
     homepage := Some(url("http://github.com/netemera/sbt-netemera")),
     scmInfo := Some(
