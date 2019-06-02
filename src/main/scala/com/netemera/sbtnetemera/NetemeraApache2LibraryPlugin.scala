@@ -1,7 +1,7 @@
 package com.netemera.sbtnetemera
 
 import sbt.Keys._
-import sbt.{Setting, _}
+import sbt.{ Setting, _ }
 import com.github.mwegrz.sbtmwegrz.MwegrzApache2LibraryPlugin
 
 import scala.language.implicitConversions

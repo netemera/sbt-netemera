@@ -3,7 +3,7 @@ package com.netemera.sbtnetemera
 import com.typesafe.sbt.SbtNativePackager.autoImport._
 import com.typesafe.sbt.packager.docker.DockerPlugin.autoImport._
 import sbt.Keys._
-import sbt.{Setting, _}
+import sbt.{ Setting, _ }
 import com.github.mwegrz.sbtmwegrz.MwegrzHttpServerAppPlugin
 
 import scala.language.implicitConversions
@@ -20,7 +20,6 @@ object NetemeraHttpServerAppPlugin extends MwegrzHttpServerAppPlugin {
         url = url("https://www.netemera.com")
       )
     ),
-
     maintainer := "Netemera <team@netemera.com>",
     dockerRepository := Some("registry.gitlab.com"),
     dockerUsername := Some("netemera")
