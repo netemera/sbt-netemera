@@ -11,12 +11,12 @@ lazy val root = (project in file("."))
       "-deprecation",
       "-unchecked"
     ),
-    scalaVersion := "2.12.8",
+    scalaVersion := "2.12.9",
     scalafmtOnCompile := true,
     libraryDependencies ++= Seq(
       "org.slf4j" % "slf4j-nop" % "1.7.25"
     ),
-    addSbtPlugin("com.github.mwegrz" % "sbt-mwegrz" % "0.1.18"),
+    addSbtPlugin("com.github.mwegrz" % "sbt-mwegrz" % "0.1.19-SNAPSHOT"),
     // Release settings
     releaseTagName := { (version in ThisBuild).value },
     releaseTagComment := s"Release version ${(version in ThisBuild).value}",
