@@ -11,7 +11,7 @@ lazy val root = (project in file("."))
       "-deprecation",
       "-unchecked"
     ),
-    scalaVersion := "2.12.9",
+    scalaVersion := "2.12.10",
     scalafmtOnCompile := true,
     libraryDependencies ++= Seq(
       "org.slf4j" % "slf4j-nop" % "1.7.25"
