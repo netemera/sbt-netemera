@@ -20,7 +20,7 @@ object NetemeraHttpServerAppPlugin extends MwegrzHttpServerAppPlugin {
         url = url("https://www.netemera.com")
       )
     ),
-    resolvers += "MyMavenRepo read" at "https://mymavenrepo.com/repo/dWLBAjbgqRQN6dpgLsm5",
+    resolvers += "MyMavenRepo read" at "https://mymavenrepo.com/repo/zghBEmhHgl0OkEqxC1RO",
     maintainer := "Netemera <team@netemera.com>",
     dockerRepository := Some("registry.gitlab.com"),
     dockerUsername := Some("netemera")

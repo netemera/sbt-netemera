@@ -34,7 +34,7 @@ lazy val root = (project in file("."))
       pushChanges
     ),
     // Publish settings
-    publishTo := Some("MyMavenRepo" at "https://mymavenrepo.com/repo/dWLBAjbgqRQN6dpgLsm5"),
+    publishTo := Some("MyMavenRepo write" at "https://mymavenrepo.com/repo/dWLBAjbgqRQN6dpgLsm5"),
     publishMavenStyle := true,
     publishArtifact in Test := false,
     pomIncludeRepository := { _ =>

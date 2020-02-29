@@ -18,7 +18,7 @@ object NetemeraLibraryPlugin extends MwegrzLibraryPlugin {
         url = url("https://www.netemera.com")
       )
     ),
-    resolvers += "MyMavenRepo read" at "https://mymavenrepo.com/repo/dWLBAjbgqRQN6dpgLsm5",
-    publishTo := Some("MyMavenRepo write" at "https://mymavenrepo.com/repo/zghBEmhHgl0OkEqxC1RO")
+    resolvers += "MyMavenRepo read" at "https://mymavenrepo.com/repo/zghBEmhHgl0OkEqxC1RO",
+    publishTo := Some("MyMavenRepo write" at "https://mymavenrepo.com/repo/dWLBAjbgqRQN6dpgLsm5")
   )
 }
