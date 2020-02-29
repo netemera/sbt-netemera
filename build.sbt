@@ -25,30 +25,21 @@ lazy val root = (project in file("."))
       checkSnapshotDependencies,
       inquireVersions,
       runClean,
-      runTest,
+      releaseStepCommandAndRemaining("+test"),
       setReleaseVersion,
       commitReleaseVersion,
       tagRelease,
-      releaseStepCommandAndRemaining("publishSigned"),
       setNextVersion,
       commitNextVersion,
-      releaseStepCommandAndRemaining("sonatypeReleaseAll"),
       pushChanges
     ),
-    releasePublishArtifactsAction := PgpKeys.publishSigned.value,
     // Publish settings
-    publishTo := Some(
-      if (isSnapshot.value)
-        Opts.resolver.sonatypeSnapshots
-      else
-        Opts.resolver.sonatypeStaging
-    ),
+    publishTo := Some("MyMavenRepo" at "https://mymavenrepo.com/repo/dWLBAjbgqRQN6dpgLsm5"),
     publishMavenStyle := true,
     publishArtifact in Test := false,
     pomIncludeRepository := { _ =>
       false
     },
-    licenses := Seq("Apache License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.html")),
     homepage := Some(url("http://github.com/netemera/sbt-netemera")),
     scmInfo := Some(
       ScmInfo(
