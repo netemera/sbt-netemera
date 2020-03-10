@@ -25,16 +25,24 @@ lazy val root = (project in file("."))
       checkSnapshotDependencies,
       inquireVersions,
       runClean,
-      releaseStepCommandAndRemaining("+test"),
+      runTest,
       setReleaseVersion,
       commitReleaseVersion,
       tagRelease,
+      releaseStepCommandAndRemaining("publishSigned"),
       setNextVersion,
       commitNextVersion,
+      releaseStepCommandAndRemaining("sonatypeReleaseAll"),
       pushChanges
     ),
+    releasePublishArtifactsAction := PgpKeys.publishSigned.value,
     // Publish settings
-    publishTo := Some("MyMavenRepo write" at "https://mymavenrepo.com/repo/dWLBAjbgqRQN6dpgLsm5"),
+    publishTo := Some(
+      if (isSnapshot.value)
+        Opts.resolver.sonatypeSnapshots
+      else
+        Opts.resolver.sonatypeStaging
+    ),
     publishMavenStyle := true,
     publishArtifact in Test := false,
     pomIncludeRepository := { _ =>
